@@ -1,6 +1,5 @@
-# AUFR: Authenticate Using Face Recognition
+Facial Attendance system
 
-  ![Gui Application View](icon/aufr.png?raw=true "PyQt GUI")
 
 ## Algorithms Implemented
   - Eigenfaces
