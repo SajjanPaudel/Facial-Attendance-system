@@ -516,12 +516,12 @@ class AUFR(QMainWindow):        # Main application
     def auto_mail():
         list_of_files = glob.glob('Attendance/*.csv') # * means all if need specific format then *.csv
         latest_file = max(list_of_files, key=os.path.getctime)
-        receiver = "ninjabutlazy@gmail.com"  # receiver email address
+        receiver = "#receivers email"  # receiver email address
         body = "Attendance File"  # email body
         filename = latest_file  # attach the file
         print(latest_file)
         # mail information
-        yag = yagmail.SMTP("sajjanpaudel811@gmail.com", "mowhbooerokpehzj")
+        yag = yagmail.SMTP("Senders_email", "#password")
 
         # sent the mail
         yag.send(
@@ -533,9 +533,9 @@ class AUFR(QMainWindow):        # Main application
         print('Sent email successfully')
 
 
-    #def delete_old_csv():
-        #os.remove('Attendance\Attendance.csv')
-    #atexit.register(delete_old_csv)
+    def delete_old_csv():
+        os.remove('Attendance\Attendance.csv')
+    atexit.register(delete_old_csv)
     atexit.register(auto_mail)
 
 
