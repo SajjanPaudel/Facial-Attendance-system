@@ -41,6 +41,7 @@
   3. Click recognize button.
   4. Click save button to save current displayed image.
   5. Click record button to save video.
+  6. The saved Attendance will be in a folder called Attendance with the latest entry and the exit timestamp in a csv file.
 
 ## Resources
   - [OpenCV face Recognition](https://docs.opencv.org/2.4/modules/contrib/doc/facerec/facerec_tutorial.html)
