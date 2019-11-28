@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1071</width>
+    <height>680</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1071</width>
+    <height>680</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1071</width>
+    <height>680</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Face recognition attendance system</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>.</normaloff>.</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+
+QStatusBar{
+  background-color:qlineargradient(x1:0,y1:0,x2:0,y2:1,stop:0 rgba(25,25,25,127),stop:1 rgba(53,53,53,75));
+  color:palette(mid);
+}
+
+QMenuBar{
+  background-color:#3d3d3d;
+  border-bottom:2px solid rgba(25,25,25,75);
+}
+QMenuBar::item{
+  spacing:2px;
+  padding:3px 4px;
+  background:3d3d3d;
+}
+QMenuBar::QPushButton{
+width:10px;
+height:5px;
+}
+QPushButton{
+border-style:solid;
+background-color:#3d3d3d;
+color:#fff;
+border-radius:7px;
+border-color:#bbbbbb;
+border-width:1px;
+}
+
+QPushButton:hover{
+color:#00cc0c;
+	background-color:qlineargradient(spread:pad, x1:0.517, y2:1, stop:0 rgba(45,45,45,255),stop:1rgba(29,29,29,255));
+	border-color:#66ff00;
+border-width:2px;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>-11</y>
+      <width>881</width>
+      <height>581</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Box</enum>
+    </property>
+    <widget class="QLabel" name="video_feed">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>10</y>
+       <width>881</width>
+       <height>571</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+background-color:#3d3d3d;
+border:solid;
+border-color:#bbbbbb;
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="frame_2">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>201</width>
+      <height>571</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-style:solid;
+background-color:#3d3d3d;
+color:#fff;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Panel</enum>
+    </property>
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>370</y>
+       <width>150</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>RECTANGLE</string>
+     </property>
+     <property name="flat">
+      <bool>false</bool>
+     </property>
+     <widget class="QRadioButton" name="smile_rect_radio">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>90</y>
+        <width>120</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QRadioButton:Hover{
+color:#66ff00;
+}
+QRadioButton{
+color:;
+}</string>
+      </property>
+      <property name="text">
+       <string>Smile</string>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">rect_radio_group</string>
+      </attribute>
+     </widget>
+     <widget class="QRadioButton" name="eye_rect_radio">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>60</y>
+        <width>120</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QRadioButton:Hover{
+color:#66ff00;
+}</string>
+      </property>
+      <property name="text">
+       <string>Eye</string>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">rect_radio_group</string>
+      </attribute>
+     </widget>
+     <widget class="QRadioButton" name="face_rect_radio">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>120</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QRadioButton:Hover{
+color:#66ff00;
+}</string>
+      </property>
+      <property name="text">
+       <string>Face</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">rect_radio_group</string>
+      </attribute>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>10</y>
+       <width>150</width>
+       <height>191</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string/>
+     </property>
+     <widget class="QPushButton" name="generate_dataset_btn">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>30</y>
+        <width>120</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>Generate Dataset</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="train_model_btn">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>70</y>
+        <width>120</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Train Model</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="recognize_face_btn">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>110</y>
+        <width>120</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Recognize Face</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_1">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>220</y>
+       <width>150</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>ALGORITHMS</string>
+     </property>
+     <property name="flat">
+      <bool>false</bool>
+     </property>
+     <property name="checkable">
+      <bool>false</bool>
+     </property>
+     <widget class="QRadioButton" name="lbph_algo_radio">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>90</y>
+        <width>120</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QRadioButton:Hover{
+color:#66ff00;
+}</string>
+      </property>
+      <property name="text">
+       <string>LBPH</string>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">algo_radio_group</string>
+      </attribute>
+     </widget>
+     <widget class="QRadioButton" name="fisher_algo_radio">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>60</y>
+        <width>120</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QRadioButton:Hover{
+color:#66ff00;
+}</string>
+      </property>
+      <property name="text">
+       <string>Fisherfaces</string>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">algo_radio_group</string>
+      </attribute>
+     </widget>
+     <widget class="QRadioButton" name="eigen_algo_radio">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>120</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QRadioButton:Hover{
+color:#66ff00;
+}</string>
+      </property>
+      <property name="text">
+       <string>Eignefaces</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">algo_radio_group</string>
+      </attribute>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="video_recording_btn">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>530</y>
+       <width>87</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+border-style:solid;
+background-color:#329932;
+color:#fff;
+border-radius:7px;
+border-color:#bbbbbb;
+border-width:1px;
+}
+QPushButton:Hover{
+border-style:solid;
+background-color:green;
+color:#fff;
+border-radius:7px;
+border-color:#bbbbbb;
+border-width:2px;
+}</string>
+     </property>
+     <property name="text">
+      <string>Record</string>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>-10</x>
+      <y>570</y>
+      <width>1091</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-style:none;
+background-color:#3d3d3d;
+color:#fff;
+border-radius:5;
+border-color:#bbbbbb;
+border-width:1px;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Panel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <widget class="QProgressBar" name="progress_bar_recognize">
+     <property name="geometry">
+      <rect>
+       <x>570</x>
+       <y>30</y>
+       <width>118</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-style:solid;
+background-color:#3d3d3d;
+color:#fff;
+border-radius:5;
+border-color:white;
+border-width:1px;</string>
+     </property>
+     <property name="value">
+      <number>0</number>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>490</x>
+       <y>30</y>
+       <width>71</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border:none;
+color:#bbbbbb;</string>
+     </property>
+     <property name="text">
+      <string>Confidence</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>30</y>
+       <width>54</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border:none;
+color:#bbbbbb;</string>
+     </property>
+     <property name="text">
+      <string>Trainined</string>
+     </property>
+    </widget>
+    <widget class="QProgressBar" name="progress_bar_train">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>30</y>
+       <width>118</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-style:solid;
+background-color:#3d3d3d;
+color:#fff;
+border-radius:5;
+border-color:white;
+border-width:1px;</string>
+     </property>
+     <property name="maximum">
+      <number>3</number>
+     </property>
+     <property name="value">
+      <number>0</number>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="format">
+      <string>%p%</string>
+     </property>
+    </widget>
+    <widget class="QProgressBar" name="progress_bar_generate">
+     <property name="geometry">
+      <rect>
+       <x>127</x>
+       <y>30</y>
+       <width>111</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:white;
+border-style:solid;
+background-color:#3d3d3d;
+color:#fff;
+border-radius:5;
+border-color:white;
+border-width:1px;</string>
+     </property>
+     <property name="value">
+      <number>0</number>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>30</y>
+       <width>61</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border:none;
+color:#bbbbbb;</string>
+     </property>
+     <property name="text">
+      <string>Generated</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="exit_btn">
+     <property name="geometry">
+      <rect>
+       <x>960</x>
+       <y>30</y>
+       <width>87</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+border-style:solid;
+background-color:#FF4C4C;
+color:#fff;
+border-radius:7px;
+border-color:#bbbbbb;
+border-width:1px;
+}
+QPushButton:Hover{
+border-style:solid;
+background-color:red;
+color:#fff;
+border-radius:7px;
+border-color:#bbbbbb;
+border-width:1px;
+}</string>
+     </property>
+     <property name="text">
+      <string>Exit</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menu_bar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1071</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="defaultUp">
+    <bool>false</bool>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>exit_btn</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>748</x>
+     <y>648</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>809</x>
+     <y>719</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <buttongroups>
+  <buttongroup name="rect_radio_group"/>
+  <buttongroup name="algo_radio_group"/>
+ </buttongroups>
+</ui>
