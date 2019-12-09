@@ -1,6 +1,8 @@
 # Facial Attendance system
 - It is based on OpenCv 
 - The UI is made with QtDesigner and basic CSS is done inside QtDesigner
+
+
 This project uses three different face recognition algorithms namely
 - EigenFaces
 - FisherFaces
