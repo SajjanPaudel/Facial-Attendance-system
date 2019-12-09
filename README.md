@@ -1,10 +1,13 @@
 Facial Attendance system
+- It is based on OpenCv 
+- The UI is made with QtDesigner and basic CSS is done inside QtDesigner
 
 
-## Algorithms Implemented
-  - Eigenfaces
-  - Localbinary Pattern Histograms[LBPH]
-  - Fisherfaces
+
+This project uses three different face recognition algorithms namely
+- EigenFaces
+- FisherFaces
+- LBPH
 
 # How to use?
  1. Download miniconda/anaconda.
@@ -12,36 +15,20 @@ Facial Attendance system
  3. Installation.	
  4. Clone repository.	
  5. Execute.
+ 6. Change your confidence levels for recognition accordingly
+ 7. Change the sender and receiver email for yagmail 
 
-### 1. Download
- - Download [Mininconda](https://conda.io/miniconda.html).
- - Download [Anaconda](https://www.anaconda.com/).
-
-### 2. Create Environment
- - ```$ conda create -n cv python=3.*```
- - ```$ conda activate cv```
-
-### 3. Package Installation
+# Pre-Requisites
  - ```$ conda install pyqt=5.*```
  - ```$ conda install opencv=*.*```
  - ```$ conda install -c michael_wild opencv-contrib```
-
-### 4. Clone Repository
- - Clone ```$ git clone https://github.com/indian-coder/authenticate-using-face-recognition.git aufr```
- - Cd into aufr ```$ cd aufr```
-
-### 5. Execute Application
- - Execute  ```$ python main.py```
-
-	Note:Generate atleat two datasets to work properly.
+ 
+Note : for fisherfaces training cannot be done with less than two datasets.
   
-  1. Enter name,and unique key.
-  2. Check algorithm radio button which you want to train.
-  3. Click recognize button.
-  4. Click save button to save current displayed image.
-  5. Click record button to save video.
-  6. The saved Attendance will be in a folder called Attendance with the latest entry and the exit timestamp in a csv file.
+ #  1. Enter name,and unique key.
+ #  2. Check algorithm radio button which you want to train.
+ #  3. Click recognize button.
+ #  4. Click save button to save current displayed image.
+ #  5. Click record button to save video.
+ #  6. The saved Attendance will be in a folder called Attendance with the latest entry and the exit timestamp in a csv file.
 
-## Resources
-  - [OpenCV face Recognition](https://docs.opencv.org/2.4/modules/contrib/doc/facerec/facerec_tutorial.html)
-  - [PyQt5 Documentation](http://pyqt.sourceforge.net/Docs/PyQt5/)
