@@ -25,10 +25,9 @@ This project uses three different face recognition algorithms namely
  
 Note : for fisherfaces training cannot be done with less than two datasets.
   
- #  1. Enter name,and unique key.
- #  2. Check algorithm radio button which you want to train.
- #  3. Click recognize button.
- #  4. Click save button to save current displayed image.
- #  5. Click record button to save video.
- #  6. The saved Attendance will be in a folder called Attendance with the latest entry and the exit timestamp in a csv file.
+ 1. After Clicking Generate Dataset: Enter name,and unique key.
+ 2. Check algorithm radio button which you want to train.
+ 3. Click recognize button.and the radio button for the required algorithm.
+ 4. Click record button while generating dataset or recognizing to save video.
+ 5. The saved Attendance will be in a folder called Attendance with the latest entry and the exit timestamp in a csv file.
 
